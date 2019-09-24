@@ -1,0 +1,736 @@
+/* Polices personnalisées */
+
+@font-face {
+    font-family: '3Dumb';
+    src: url('fonts/3dumb.eot');
+    src: url('fonts/3dumb.eot?#iefix') format('embedded-opentype'),
+        url('fonts/3dumb.woff2') format('woff2'),
+        url('fonts/3dumb.woff') format('woff'),
+        url('fonts/3dumb.ttf') format('truetype'),
+        url('fonts/3dumb.svg#3dumb') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+@font-face {
+    font-family: 'Antic Didone';
+    src: url('fonts/AnticDidone-Regular.eot');
+    src: url('fonts/AnticDidone-Regular.eot?#iefix') format('embedded-opentype'),
+        url('fonts/AnticDidone-Regular.woff2') format('woff2'),
+        url('fonts/AnticDidone-Regular.woff') format('woff'),
+        url('fonts/AnticDidone-Regular.ttf') format('truetype'),
+        url('fonts/AnticDidone-Regular.svg#AnticDidone-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Elements principaux de la page (largeur du site, fond, couleur et police par défaut, police)*/
+
+body {
+	background: url("images/fond.jpg");
+	font-family: "Georgia";
+	font-size: 1.2em;
+	color: #333;
+}
+
+#bloc_page {
+	width: 55%;
+	margin: auto;
+}
+
+/* Header */
+
+header {
+	margin-bottom: 15px;
+}
+
+header h1 {
+	font-family: "3Dumb", "Georgia";
+	color: black;
+	font-size: 3em;
+	text-align: center;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+header #chevron {
+	text-shadow: 1px 1px 0px red;
+}
+
+header #slash {
+	text-shadow: 1px 1px 0px green;
+}
+
+header #c {
+	text-shadow: 1px 1px 0px yellow;
+}
+
+header #d {
+	text-shadow: 1px 1px 0px blue;;
+}
+
+#titre_principal {
+	width: 90%;
+	margin: auto;
+	border: 1px solid;
+	border-radius: 5px;
+	background-color: #333;
+}
+
+header nav ul {
+	width:99%;
+	display: flex;
+	justify-content: space-around;
+	padding: 0px;
+	margin: 0px;
+	border: 3px groove #333;
+	box-shadow: 4px 4px 4px #333;
+}
+
+header li {
+	height: 30px;
+	line-height: 30px; /* Centrage vertical */
+	text-align: center;
+}
+
+header a {
+	font-family: "Antic Didone";
+	font-size: 1.2em;
+	font-weight: bold;
+	color: black;
+	padding: 0px 5px;
+}
+
+header a:hover {
+	background-color: #333;
+	color: white;
+}
+
+.red:hover { /* Header & Footer */
+	color: red;
+}
+
+.green:hover {
+	color: green;
+}
+
+.yellow:hover {
+	color: yellow;
+}
+
+.blue:hover {
+	color: blue;
+}
+
+/* Bannière */
+
+#banniere_image {
+	text-align:center;
+	margin-bottom: 20px;
+	/*border-bottom: 1px dashed #333;*/
+}
+
+#banniere_image img {
+	border-radius: 5px;
+	width: 80%;
+}
+
+#banniere_description {
+	font-family: "Antic Didone", Georgia;
+	font-size: 1.2em;
+	font-weight: bold;
+	margin: 10px 0px;
+}
+
+/* Section principale */
+
+#section_accueil {
+	width: 100%;
+	display: flex;
+	flex-direction: horizontal;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding-top: 0px;
+	margin: 20px 0px;
+}
+
+#section_accueil div {
+	width: 100%;
+	height: 200px;
+	border: 1px solid #333;
+	border-radius: 5px;
+	color: white;
+	/*overflow: hidden;*/
+}
+
+#section_accueil a {
+	width: 40%;
+	margin: 5px;
+	color: black;
+}
+
+#section_accueil h1 {
+	font-family: "Antic Didone", Georgia;
+	text-align: center;
+	margin: 0px;
+	padding: 10px;
+	background-color: #333;
+}
+
+#section_accueil p {
+	color: black;
+	padding: 5px;
+	margin: 0px;
+	text-align: justify;
+}
+
+#section_accueil #html {
+	box-shadow: 4px 4px 4px red;
+}
+
+#section_accueil #css {
+	box-shadow: 4px 4px 4px green;
+}
+
+#section_accueil #javascript {
+	box-shadow: 4px 4px 4px yellow;
+}
+
+#section_accueil #php {
+	box-shadow: 4px 4px 4px blue;
+}
+
+#section_accueil div:hover {
+	border: 2px inset black;
+}
+
+#section_accueil #html:hover {
+	color: red;
+}
+
+#section_accueil #css:hover {
+	color: green;
+}
+
+#section_accueil #javascript:hover {
+	color: yellow;
+}
+
+#section_accueil #php:hover {
+	color: blue;
+}
+
+/* Footer */
+
+footer {
+	font-family: "Antic Didone", Georgia;
+	font-weight: normal;
+	color: white;
+	display: flex;
+	justify-content: space-between;
+	margin: 50px 0px 30px 0px;
+	padding-top: 5px;
+	background-color: #333;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px black;
+}
+
+footer div {
+	width: 33.3%;
+	height: 200px;
+}
+
+footer ul {
+	padding: 0px;
+	text-align: center;
+}
+
+footer ul li {
+	padding: 5px 0px;
+}
+
+footer ul a {
+	color: white;
+}
+
+footer a:hover {
+	font-weight: bold;
+}
+
+footer h1 {
+	font-size: 1.2em;
+	margin-top: 5px;
+	text-decoration: none;
+	color: black;
+}
+
+/* Accueil HTML */
+
+#accueil_html ul li {
+	padding: 2px;
+}
+
+#accueil_html {
+	display: flex;
+}
+
+#accueil_html div:nth-child(2) {
+	flex: 1;
+}
+
+#accueil_html a {
+	color: #333;
+	font-size: 1.1em;
+}
+
+#accueil_html a:hover {
+	color: red;
+	font-weight: bold;
+}
+
+.menu_html h1 {
+	text-align: center;
+	border-bottom: 2px solid red;
+}
+
+.menu_html .m, .menu_html .f, .menu_html .a {
+	color: red;
+}
+
+/* Mémento HTML */
+
+nav ul {
+	list-style-type: none; /* nav ul, a, h1, h2, etc. 
+							applicables pour toutes les pages */
+}
+
+a {
+	text-decoration: none;
+}
+
+h1 {
+	font-family: "Antic Didone", Georgia;
+	font-size: 1.5em;
+}
+
+h2 {
+	font-size: 1.3em;
+}
+
+table {
+	border: 1px solid black;
+	width: 80%;
+}
+
+table th {
+	background-color: #333;
+	color: white;
+}
+
+tr:nth-child(even) {
+	background-color: white;
+}
+
+tr:nth-child(odd) {
+	background-color: silver;
+}
+
+table td, table th {
+	padding: 10px;
+	text-align: left;
+}
+
+kbd {
+	background-color: #e1e1ea;
+	color: black;
+	font-size: 1.2em;
+}
+
+.titre_html {
+	border-bottom: 2px solid red;
+}
+
+
+/* Test Media Queries */
+
+@media all and (max-width: 1024px) {
+
+	#bloc_page {
+		width: auto;
+	}
+
+	body {
+		font-size: 1.1em;
+	}
+
+	#banniere_image {
+		display: none;
+	}
+}
+
+/* Accueil CSS */
+
+#accueil_css ul li {
+	padding: 2px;
+}
+
+#accueil_css {
+	display: flex;
+}
+
+#accueil_css div:nth-child(2) {
+	flex: 1;
+}
+
+#accueil_css a {
+	color: #333;
+	font-size: 1.1em;
+}
+
+#accueil_css a:hover {
+	color: green;
+	font-weight: bold;
+}
+
+.menu_css h1 {
+	text-align: center;
+	border-bottom: 2px solid green;
+}
+
+.menu_css .m, .menu_css .c, .menu_css .e {
+	color: green;
+}
+
+/* Mémento CSS */
+
+.titre_css {
+	border-bottom: 2px solid green;
+}
+
+/* Effets avancés en CSS */
+
+.journal { 
+	margin: 30px 0px;
+
+	column-count: 4;
+	column-gap: 100px;
+	column-rule: 2px dashed black;
+
+	text-align: justify;
+
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+}
+
+.journal h1 { /* Tests */
+	/*column-span: all;*/
+	break-before:column;
+	break-inside: column;
+	/*break-after: column;*/
+}
+
+.degrades {
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 50px;
+}
+
+.degrades div {
+	width: 20%;
+	height: 200px;
+}
+
+#linear {
+	background-image: linear-gradient(blue 0%, green 70%);
+}
+
+#linear_to_right {
+	background-image: linear-gradient(to right, blue, green);
+}
+
+#linear_to_top_left {
+	background-image: linear-gradient(to top left, blue, green);
+}
+
+#repeating_linear {
+	background-image: repeating-linear-gradient(to right, green, red, blue, green 25%);
+}
+
+#radial_circle {
+	background-image: radial-gradient(circle at center, white, green);
+}
+
+#radial_right {
+	background-image: radial-gradient(circle at right, white, green);
+}
+
+#radial_top_left_to_bottom_right {
+	background-image: radial-gradient(farthest-side circle at top left, white, green);
+}
+
+#repeating_radial {
+	background-image: repeating-radial-gradient(farthest-side circle at center, green, red, green 25%);
+}
+
+.deuxd {
+	margin-bottom: 40px;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.deuxd div {
+	width: 200px;
+	margin: 20px;
+	border: 1px solid black;
+}
+
+#rotate {
+	width: 200px;
+	transform: rotate(10deg);
+}
+
+#origin {
+	width: 200px;
+	transform: rotate(10deg);
+	transform-origin: 0 0;
+}
+
+#scale {
+	width: 200px;
+	transform: scale(1.3,0.6);
+}
+
+#translate {
+	width: 200px;
+	transform: translate(30px, 50px);
+}
+
+#skewX {
+	width: 200px;
+	transform: skewX(20deg);
+}
+
+#skewY {
+	width: 200px;
+	transform: skewY(20deg);
+}
+
+.transitions {
+	display: flex;
+}
+
+.transitions div {
+	width: 200px;
+	height: 200px;
+	margin: 20px;
+}
+
+#transition_one {
+	background-color: blue;
+	transition-property: background-color;
+	transition-duration: 1s;
+	transition-delay: .2s;
+	transition-timing-function: ease-in-out;
+}
+
+#transition_one:hover {
+	background-color: orange;
+}
+
+#transition_two {
+	background-color: red;
+	transition-property: transform;
+	transition-duration: 2s;
+	transition-timing-function: cubic-bezier(.43,-0.83,.53,1.73);
+}
+
+#transition_two:hover {
+	transform: translateX(200px);
+}
+
+#transition_three {
+	background-color: green;
+	transition: background-color 2s ease, width 1s linear;
+}
+
+#transition_three:hover {
+	background-color: yellow;
+	width: 300px;
+}
+
+
+.animations {
+	display: flex;
+}
+
+.animations div {
+	width: 200px;
+	height: 200px;
+	margin: 20px;
+}
+
+#animation_one {
+	background-color: cyan;
+}
+
+@keyframes monanimation {
+	0% {
+		transform: rotate(10deg);
+	}
+
+	50% {
+		transform: scale(1.5);
+	}
+
+	100% {
+		transform: translate(50px,50px);
+	}
+}
+
+#animation_one:hover {
+	animation: monanimation 2s;
+}
+
+#animation_two {
+	background-color: black;
+}
+
+@keyframes move {
+	from {
+		transform: translateX(0px);
+	}
+
+	30% {
+		transform: translateX(150px);
+	}
+
+	60% {
+		transform: translateX(150px) rotate(30deg);
+	}
+
+	80% {
+		transform: translate(100px,80px) rotate(30deg);
+	}
+
+	to {
+		transform: translate(100px,80px) rotate(30deg);
+		border-radius: 30px;
+		background-color: red;
+	}
+}
+
+#animation_two:hover {
+	animation: move 2s steps(3);
+}
+
+#animation_three {
+	background-color: yellow;
+}
+
+#animation_three:hover {
+	animation: move 2s linear alternate infinite;
+}
+
+#trois_d {
+	perspective: 800px;
+	perspective-origin: top-right;
+	display: flex;
+}
+
+.translations {
+	height: 400px;
+}
+
+.translations div {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	top: 25%;
+	right: 60%;
+	background-color: rgba(125,125,125,.5);
+}
+
+#translation_one {
+	transform: translateZ(-200px);
+}
+
+#translation_three {
+	transform: translateZ(200px);
+}
+
+.devant_derriere div {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	top: 25%;
+	right: 20%;
+	opacity: 0.5;
+	border: 2px solid #444;
+	text-align: center;
+	transition: 2s;
+	backface-visibility: hidden;
+}
+
+#devant {
+	z-index: 100;
+	background-image: linear-gradient(white,green);
+}
+
+#derriere {
+	z-index: 50;
+	background-image: linear-gradient(white,red);
+	transform: rotateY(-180deg); /* retourné par défaut */
+}
+
+#devant:hover {
+	transform: rotateY(360deg);
+}
+
+#devant:hover + #derriere { /* permet d'animer 2 éléments différents lors du hover */
+	transform: rotateY(180deg);
+}
+
+/* Accueil PHP */
+
+#accueil_php ul li {
+	padding: 2px;
+}
+
+#accueil_php {
+	display: flex;
+}
+
+#accueil_php div:nth-child(2) {
+	flex: 1;
+}
+
+#accueil_php a {
+	color: #333;
+	font-size: 1.1em;
+}
+
+#accueil_php a:hover {
+	color: blue;
+	font-weight: bold;
+}
+
+.menu_php h1 {
+	text-align: center;
+	border-bottom: 2px solid blue;
+}
+
+.menu_php .m, .menu_php .s, .menu_php .l, .menu_php .f, .men_php .c {
+	color: blue;
+}
+
+/* Mémento PHP */
+
+.titre_php {
+	border-bottom: 2px solid blue;
+}
