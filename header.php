@@ -8,7 +8,7 @@
 			<a href="index.php"> <li> Accueil </li> </a>
 			<a class="red" href="accueil_html.php"> <li> HTML </li> </a>
 			<a class="green" href="accueil_css.php"> <li> CSS </li> </a>
-			<a class="yellow" href="#"> <li> JavaScript </li> </a>
+			<a class="yellow" href="accueil_js.php"> <li> JavaScript </li> </a>
 			<a class="blue" href="accueil_php.php"> <li> PHP </li> </a>
 		</ul>
 	</nav>

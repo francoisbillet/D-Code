@@ -27,7 +27,7 @@
 					</div>
 				</a>
 
-				<a href="#">
+				<a href="accueil_js.php">
 					<div id="javascript">
 						<h1> JavaScript </h1>
 						<p> JavaScript est un langage de programmation de scripts principalement employé dans les pages web interactives mais aussi pour les serveurs avec l'utilisation de Node.js </p>

@@ -5,7 +5,7 @@
 				<li> <a href="index.php"> Accueil </a> </li>
 				<li> <a href="accueil_html.php" class="red"> HTML </a> </li>
 				<li> <a href="accueil_css.php" class="green"> CSS </a> </li>
-				<li> <a href="#" class="yellow"> JavaScript </a> </li>
+				<li> <a href="accueil_js.php" class="yellow"> JavaScript </a> </li>
 				<li> <a href="accueil_php.php" class="blue"> PHP </a> </li>
 			</ul>
 		</nav>
