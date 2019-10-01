@@ -21,7 +21,7 @@
 					<h1> Où souhaitez-vous aller ? </h1>
 					<nav>
 						<ul>
-							<li> <a href="php.php"> <span class="m">M</span>émento PHP </a> </li>
+							<li> <a href="memento_php.php"> <span class="m">M</span>émento PHP </a> </li>
 							<li> <a href="sessions_cookies_php.php"> <span class="s">S</span>ession et cookies </a> </li>
 							<li> <a href="lire_ecrire_fichier_php.php"> <span class="l">L</span>ire et écrire dans un fichier </a> </li>
 							<li> <a href="lire_ecrire_donnees_php.php"> <span class="l">L</span>ire et écrire dans la BDD </a> </li>
