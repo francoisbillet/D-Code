@@ -798,10 +798,117 @@ function ajaxGet(url, callback) {
 
 			<p> Il existe plusieurs mécanismes pour authentifier le client d'une API. Le plus simple repose sur le principe de <strong>clé d'accès</strong> (access key). Une clé d'éccès permet d'identifier un client de manière unique. Elle se présente souvent sous la forme d'une longue série de lettres et de chiffres ajoutées dans l'URL de l'API. </p>
 
+			<h2> Envoyer des données à un serveur web </h2>
 
+			<p> L'envoi d'informations à un serveur s'effectue grâce à une requête HTTP <kbd>POST</kbd> contenant les données à envoyer. Il existe deux techniques d'envoi :
+				<ul>
+					<li> Intégrer les données directement dans la requête HTTP d'envoi. C'est de cette manière que fonctionne la soumission d'un formulaire HTML </li>
+					<li> Transmettre les données au format JSON </li>
+				</ul>
+			</p>
 
+			<p> L'objet <kbd>FormData</kbd> facilite grandement l'envoi d'un formulaire vers un serveur. Il peut être utilisé indépendamment d'un formulaire, en lui ajoutant une à une les données à transmettre grâce à sa méthode <kbd>append</kbd>. Cette méthode prend en paramètres le nom et la valeur de la donnée ajoutée. </p>
 
+			<h3> Écriture d'une fonction générique </h3>
 
+			<p> Pour gérer le résultat et les éventuelles erreurs liées à l'appel AJAX, on définit une fonction générique (comme pour les appels de récupération) que l'on pourra réutiliser à chaque nouvel envoi de données : </p>
+
+<pre><code>// Exécute un appel AJAX POST
+// Prend en paramètres l'URL cible, la donnée à envoyer et la fonction callback appelée en cas de succès
+
+function ajaxPost(url, data, callback) {
+    var req = new XMLHttpRequest();
+    req.open("POST", url);
+    req.addEventListener("load", function () {
+        if (req.status >= 200 && req.status < 400) {
+            // Appelle la fonction callback en lui passant la réponse de la requête
+            callback(req.responseText);
+        } else {
+            console.error(req.status + " " + req.statusText + " " + url);
+        }
+    });
+    req.addEventListener("error", function () {
+        console.error("Erreur réseau avec l'URL " + url);
+    });
+    req.send(data);
+}
+</code></pre>
+
+			<p> On peut alors utiliser cette fonction pour écrire des données dans un fichier (par exemple) : </p>
+
+<pre><code>var commande = new FormData();
+commande.append("couleur", "rouge");
+commande.append("pointure", "43");
+// Envoi de l'objet FormData au serveur
+ajaxPost("http://localhost/javascript-web-srv/post_form.php", commande,
+    function (reponse) {
+        console.log("Commande envoyée au serveur");
+    }
+);
+</code></pre>
+
+			<h3> Soumission d'un formulaire avec FormData </h3>
+
+			<p> L'intérêt principal de l'objet <kbd>FormData</kbd> est de simplifier la soumission d'un formulaire avec AJAX : </p>
+
+<pre><code>var form = document.querySelector("form");
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    // Récupération des champs du formulaire dans l'objet FormData
+    var data = new FormData(form);
+    // Envoi des données du formulaire au serveur
+    // La fonction callback est ici vide
+    ajaxPost("http://localhost/javascript-web-srv/post_form.php", data, function () {});
+});
+</code></pre>
+
+			<h3> Envoyer des données JSON </h3>
+
+			<p> Dans certains cas (notamment l'utilisation d'une API web), le serveur attendra du client qu'il lui envoie des données structurées au format JSON. Cela nécessite de définir le type de contenu de la requête HTTP comme étant du JSON : </p>
+
+<pre><code>// Le paramètre isJson permet d'indiquer si l'envoi concerne des données JSON
+function ajaxPost(url, data, callback, isJson) {
+    var req = new XMLHttpRequest();
+    req.open("POST", url);
+    req.addEventListener("load", function () {
+        if (req.status >= 200 && req.status < 400) {
+            callback(req.responseText);
+        } else {
+            console.error(req.status + " " + req.statusText + " " + url);
+        }
+    });
+    req.addEventListener("error", function () {
+        console.error("Erreur réseau avec l'URL " + url);
+    });
+    if (isJson) {
+        // Définit le contenu de la requête comme étant du JSON
+        req.setRequestHeader("Content-Type", "application/json");
+        // Transforme la donnée du format JSON vers le format texte avant l'envoi
+        data = JSON.stringify(data);
+    }
+    req.send(data);
+}
+</code></pre>
+
+			<p> A savoir : le code précédent utilisant <kbd>FormData</kbd> fonctionne toujours avec cette version de la fonction <kbd>ajaxPost</kbd> car JavaScript permet d'appeler une fonction sans définir tous ses paramètres. </p>
+
+			<p> Dans ces cas là, on enverra les données au format JSON de cette façon : </p>
+
+<pre><code>// Création d'un objet représentant un film
+var film = {
+    titre: "Zootopie",
+    annee: "2016",
+    realisateur: "Byron Howard et Rich Moore"
+};
+// Envoi de l'objet au serveur
+ajaxPost("http://localhost/javascript-web-srv/post_json.php", film,
+    function (reponse) {
+        // Le film est affiché dans la console en cas de succès
+        console.log("Le film " + JSON.stringify(film) + " a été envoyé au serveur");
+    },
+    true // Valeur du paramètre isJson
+);
+</code></pre>
 
 			<?php include("footer.php"); ?>
 		</div>
