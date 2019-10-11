@@ -725,7 +725,7 @@ kbd {
 	border-bottom: 2px solid blue;
 }
 
-.menu_php .m, .menu_php .s, .menu_php .l, .menu_php .f, .men_php .c {
+.menu_php .m, .menu_php .s, .menu_php .l, .menu_php .f, .menu_php .c, .menu_php .e {
 	color: blue;
 }
 
@@ -733,4 +733,43 @@ kbd {
 
 .titre_php {
 	border-bottom: 2px solid blue;
+}
+
+/* Accueil JS */
+
+#accueil_js ul li {
+	padding: 2px;
+}
+
+#accueil_js {
+	display: flex;
+}
+
+#accueil_js div:nth-child(2) {
+	flex: 1;
+}
+
+#accueil_js a {
+	color: #333;
+	font-size: 1.1em;
+}
+
+#accueil_js a:hover {
+	color: #cccc00;
+	font-weight: bold;
+}
+
+.menu_js h1 {
+	text-align: center;
+	border-bottom: 2px solid yellow;
+}
+
+.menu_js .d, .menu_js .e, .menu_js .f, .menu_js .h {
+	color: #cccc00;
+}
+
+/* Pages JS */
+
+.titre_js {
+	border-bottom: 2px solid yellow;
 }
